@@ -1,12 +1,12 @@
 import useLocalStorage from "./useLocalStorage";
 
-export type Language = 'ру' | 'тат' | 'en';
-const defaultLanguage: Language = 'ру';
+export type Language = 'РУ' | 'ТАТ' | 'EN';
+const defaultLanguage: Language = 'РУ';
 
 
-export const useLanguage = (): [Language, (lang: Language) => void] => {
+export const useLanguage = (): [Language, (lang: string) => void] => {
     const [language, setLanguage] = useLocalStorage<Language>("language", defaultLanguage);
-    const updateLanguage = (lang: Language) => {
+    const updateLanguage = (lang: string) => {
         setLanguage(lang);
     };
 

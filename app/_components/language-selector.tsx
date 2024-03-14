@@ -1,39 +1,35 @@
 "use client";
 
-import {
-    Select,
-    SelectContent,
-    SelectGroup,
-    SelectItem,
-    SelectLabel,
-    SelectTrigger,
-    SelectValue,
-  } from "@/components/ui/select"
-import { Language, useLanguage } from "@/hooks/language";
-
-const languageShotToLong = {
-    "ру": "Русский",
-    "тат": "Татарча",
-    "en": "English",
-};
-
+import { Button } from "@/components/ui/button"
+import { DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuItem, DropdownMenuContent, DropdownMenu, DropdownMenuRadioGroup, DropdownMenuRadioItem } from "@/components/ui/dropdown-menu"
+import { useLanguage } from "@/hooks/language";
 
 export const LanguageSelector = () => {
     const [language, setLanguage] = useLanguage();
 
     return (
-        <Select onValueChange={(value) => setLanguage(value as Language)}>
-            <SelectTrigger className="w-[120px]">
-                <SelectValue placeholder={languageShotToLong[language]} />
-            </SelectTrigger>
-            <SelectContent >
-                <SelectGroup>
-                <SelectLabel>Выбери язык</SelectLabel>
-                <SelectItem value="ру">Русский</SelectItem>
-                <SelectItem value="тат">Татарча</SelectItem>
-                <SelectItem value="en">English</SelectItem>
-                </SelectGroup>
-            </SelectContent>
-        </Select>
-    );
-};
+        <div className="flex items-center space-x-2">
+        <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+                <Button
+                    className="w-8 h-8 p-2 rounded-full flex items-center justify-center"
+                    id="language"
+                    size="sm"
+                    variant="outline"
+                >
+                    {language}
+                </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="mt-1">
+                <DropdownMenuLabel>Language</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuRadioGroup value={language} onValueChange={setLanguage}>
+                <DropdownMenuRadioItem value="РУ">Русский</DropdownMenuRadioItem>
+                <DropdownMenuRadioItem value="ТАТ">Татарча</DropdownMenuRadioItem>
+                <DropdownMenuRadioItem value="EN">English</DropdownMenuRadioItem>
+                </DropdownMenuRadioGroup>
+            </DropdownMenuContent>
+        </DropdownMenu>
+        </div>
+    )
+}
