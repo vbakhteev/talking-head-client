@@ -8,6 +8,7 @@ import { useSearchParams } from "next/navigation";
 export default function Home() {
   const searchParams = useSearchParams();
   const destination = searchParams.get('destination');
+  const goTo = `/qr?destination=${destination}`;
 
   // TODO: call API and get a map and message
 
@@ -19,12 +20,12 @@ export default function Home() {
             <VisualButton
                 iconName="Download"
                 text="Сохранить маршрут"
-                goTo="/qr"
+                goTo={goTo}
             />
             <VisualButton
                 iconName="CarTaxiFront"
                 text="Taxi"
-                goTo="/qr"
+                goTo={goTo}
                 className="bg-yellow-400"
             />
         </div>
