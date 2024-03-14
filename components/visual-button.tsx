@@ -3,17 +3,20 @@
 import { icons } from "lucide-react";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 interface VisualButtonProps {
     iconName: string;
     text: string;
     goTo: string;
+    className?: string;
 }
 
 export const VisualButton = ({
     iconName,
     text,
     goTo,
+    className,
 }: VisualButtonProps) => {
     const LucideIcon = icons[iconName as keyof typeof icons]; // Add index signature
 
@@ -21,7 +24,7 @@ export const VisualButton = ({
     return (
         <Button
             onClick={() => router.push(goTo)}
-            className="gap-x-2 font-semibold rounded-xl"
+            className={cn("gap-x-2 font-semibold rounded-xl", className)}
             variant="outline"
         >
             {<LucideIcon size={24} />}

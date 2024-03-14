@@ -14,6 +14,8 @@ export default function Home() {
   const question = searchParams.get('question');
   if (question) {
     // TODO: add logic to handle question with LLM and redirect to the appropriate page
+    const destination = 'Отель Imereti, Казань'
+    router.push(`/map?destination=${destination}`)
   }
 
   const [value, setValue] = useState('')
