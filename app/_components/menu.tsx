@@ -26,7 +26,7 @@ export const Menu = () => {
                 <VisualButton
                     iconName="Ticket"
                     text="Чем заняться"
-                    goTo="/tousism"
+                    goTo="/tourism"
                 />
                 <VisualButton
                     iconName="Info"
