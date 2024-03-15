@@ -19,7 +19,9 @@ export default function RootLayout({
     <html lang="ru">
       <body className={inter.className}>
         <main className="bg-gray-200 min-h-screen">
-          <LanguageSelector />
+          <div className="absolute top-3 right-3">
+            <LanguageSelector />
+          </div>
           {children}
         </main>
       </body>
