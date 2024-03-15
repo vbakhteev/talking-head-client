@@ -1,6 +1,6 @@
 "use client";
 
-import { TalkingHead } from "@/components/talking-head";
+import { TalkingHeadComponent } from "@/components/talking-head";
 import { VisualButton } from "@/components/visual-button";
 import { useSearchParams } from "next/navigation";
 
@@ -16,22 +16,24 @@ export default function Home() {
 
   return (
     <div className="">
-        <div className="flex justify-around">
-            <VisualButton
-                iconName="Download"
-                text="Сохранить маршрут"
-                goTo={goTo}
-            />
-            <VisualButton
-                iconName="CarTaxiFront"
-                text="Taxi"
-                goTo={goTo}
-                className="bg-yellow-400"
-            />
-        </div>
-        <TalkingHead
-          text={message}
+      <div className="flex justify-around">
+        <VisualButton
+          iconName="Download"
+          text="Сохранить маршрут"
+          goTo={goTo}
         />
+        <VisualButton
+          iconName="CarTaxiFront"
+          text="Taxi"
+          goTo={goTo}
+          className="bg-yellow-400"
+        />
+      </div>
+      <TalkingHeadComponent
+        text={message}
+        mode="base"
+        cameraView="head"
+      />
     </div>
   );
 }
