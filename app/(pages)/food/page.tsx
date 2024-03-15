@@ -16,7 +16,7 @@ export default function Home() {
 
     // Redirect in 5 seconds
     const redirectTimeout = setTimeout(() => {
-      router.push(`/map?adress=${adress}`);
+      router.push(`/map?destination=${adress}`);
     }, 5000);
   
     return () => clearTimeout(redirectTimeout);
