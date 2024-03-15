@@ -12,18 +12,19 @@ export default function Home() {
 
   const message = `Отсканируй QR код, чтобы сохранить маршрут до ${destination}`
   return (
-    <div className="flex flex-col items-center gap-y-5">
-        <div className="p-5 bg-white">
-          <QRCode value="https://www.youtube.com/watch?v=dQw4w9WgXcQ"/>
-        </div>
-        <VisualButton
-          iconName="Home"
-          text="На главную"
-          goTo="/"
-        />
-        <TalkingHead
-          text={message}
-        />
+    <div className="h-full flex flex-col justify-end items-center gap-y-4 pb-5">
+      <div className="p-5 bg-white">
+        <QRCode value="https://www.youtube.com/watch?v=dQw4w9WgXcQ" size={350}/>
+      </div>
+      <VisualButton
+        iconName="Home"
+        text="На главную"
+        goTo="/"
+        className="mb-10"
+      />
+      <TalkingHead
+        text={message}
+      />
     </div>
   );
 }
