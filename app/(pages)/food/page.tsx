@@ -42,42 +42,42 @@ export default function Home() {
 const foodPlaces: FoodPlace[] = [
   {
     name: "Рубаи",
-    imgUrl: "https://img03.rl0.ru/afisha/1064x1064i/s5.afisha.ru/ms/MIpZc36-LtZng9GCC5ppp2_gvWn0QiyoqqhWlS6M-qU.jpg",
+    imgUrl: "/food/1.jpeg",
     restaurantType: "Халяльные рестораны",
     adress: "Профсоюзная, 23/12",
     openUtil: "23:00"
   },
   {
     name: "Панорама",
-    imgUrl: "https://img01.rl0.ru/afisha/1064x1064i/rests.afisha.ru/uploads/images/8/1b/81b5e373c5394e4a9cf2835e8bbcd37b.JPG",
+    imgUrl: "/food/2.jpeg",
     restaurantType: "Рестораны у воды",
     adress: "просп. Фатыха Амирхана, 1б, РК Ривьера, 4 этаж",
     openUtil: "00:00"
   },
   {
     name: "Султанат",
-    imgUrl: "https://img03.rl0.ru/afisha/1064x1064i/s2.afisha.ru/ms/L80kTQGPUCowqKqN_KDwkbiM36pw-p1dsRq55TygOIg.jpg",
+    imgUrl: "/food/3.jpeg",
     restaurantType: "Татарская кухня",
     adress: "Нурсултана Назарбаева, 35, корп. 1",
     openUtil: "00:00"
   },
   {
     name: "Татарская усадьба",
-    imgUrl: "https://img01.rl0.ru/afisha/1064x1064i/s2.afisha.ru/ms/BDrWaMFXf3XgEzX-S5Em3EyRHK-bKMQ-qKrX33WWcyc.jpg",
+    imgUrl: "/food/4.jpeg",
     restaurantType: "Халяльные рестораны",
     adress: "Шигабутдина Марджани, 8",
     openUtil: "23:00"
   },
   {
     name: "Печь",
-    imgUrl: "https://img03.rl0.ru/afisha/1064x1064i/www.afisha.ru/uploads/53dc94042ea54ed7a0012caa11e4c9a4.jpg",
+    imgUrl: "/food/5.jpeg",
     restaurantType: "Татарская кухня",
     adress: "Шигабутдина Марджани, 10, РК «Театр национальной кухни»",
     openUtil: "00:00"
   },
   {
     name: "Туган авылым",
-    imgUrl: "https://img04.rl0.ru/afisha/1064x1064i/s1.afisha.ru/mediastorage/4d/d9/4b06efe87b684f958a438f37d94d.jpg",
+    imgUrl: "/food/6.jpeg",
     restaurantType: "Халяльные рестораны",
     adress: "Туфана Миннуллина, 14",
     openUtil: "00:00"
