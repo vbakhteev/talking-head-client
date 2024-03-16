@@ -4,6 +4,12 @@ import { TalkingHeadComponent } from "@/components/talking-head";
 import { VisualButton } from "@/components/visual-button";
 import { useSearchParams } from "next/navigation";
 
+import {
+  YMap,
+  YMapComponentsProvider,
+  YMapDefaultFeaturesLayer,
+  YMapDefaultSchemeLayer,
+} from "ymap3-components";
 
 export default function Home() {
   const searchParams = useSearchParams();
@@ -12,10 +18,15 @@ export default function Home() {
 
   // TODO: call API and get a map and message
 
-  const message = `Вот близжайший маршрут до ${destination}. Ты можешь доехать на автобусе 126 или взять такси.`
+  const message = `Вот близжайший маршрут до ${destination}`
 
   return (
     <div className="">
+      <div className="h-80 flex">
+        <YMapComponentsProvider apiKey={process.env.NEXT_PUBLIC_YMAP_API_KEY}>
+          <YMap location={{ center: [37.95, 55.65], zoom: 10 }} />
+        </YMapComponentsProvider>
+      </div>
       <div className="flex justify-around">
         <VisualButton
           iconName="Download"
@@ -34,6 +45,6 @@ export default function Home() {
         mode="base"
         cameraView="head"
       />
-    </div>
+    </div >
   );
 }
