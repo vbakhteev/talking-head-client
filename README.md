@@ -7,7 +7,7 @@ npm i
 npm run dev
 ```
 
-In parallel browser, run
+In parallel terminal, run
 
 ```
 caddy run --watch
