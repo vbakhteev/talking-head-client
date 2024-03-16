@@ -1,4 +1,5 @@
-import { TalkingHead } from "@/components/talking-head";
+import { TalkingHeadComponent } from "@/components/talking-head";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,26 +8,29 @@ export default function Home() {
 
   return (
     <div className="h-full flex flex-col">
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-2 gap-2 pb-44">
         {tourismTypes.map((tourismType) => (
-          <Link key={tourismType.name} href={tourismType.url}>
-            <div className="bg-white rounded-lg flex flex-col items-center p-3 shadow-md">
-              <div className="relative">
-                <Image
-                  alt="Tourism type"
-                  src={tourismType.imgUrl}
-                  height={100}
-                  width={200}
-                  className="rounded-xl w-full"
-                />
-              </div>
-              <p className="font-medium">{tourismType.name}</p>
-            </div>
+          <Link
+            key={tourismType.name}
+            href={tourismType.url}
+            className="bg-white rounded-lg flex flex-col items-center p-3 shadow-md"
+          >
+            <AspectRatio ratio={4 / 3}>
+              <Image
+                alt="Tourism type"
+                src={tourismType.imgUrl}
+                fill
+                className="rounded-xl object-cover"
+              />
+            </AspectRatio>
+            <p className="font-medium">{tourismType.name}</p>
           </Link>
         ))}
       </div>
-      <TalkingHead
+      <TalkingHeadComponent
         text={message}
+        cameraView="head"
+        mode="base"
       />
     </div>
   );

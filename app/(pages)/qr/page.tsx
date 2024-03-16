@@ -1,6 +1,6 @@
 "use client";
 
-import { TalkingHead } from "@/components/talking-head";
+import { TalkingHeadComponent } from "@/components/talking-head";
 import { VisualButton } from "@/components/visual-button";
 import { useSearchParams } from "next/navigation";
 import QRCode from "react-qr-code";
@@ -12,18 +12,20 @@ export default function Home() {
 
   const message = `Отсканируй QR код, чтобы сохранить маршрут до ${destination}`
   return (
-    <div className="h-full flex flex-col justify-end items-center gap-y-4 pb-5">
+    <div className="h-full flex flex-col justify-end items-center gap-y-4 pb-5 pt-9">
       <div className="p-5 bg-white">
-        <QRCode value="https://www.youtube.com/watch?v=dQw4w9WgXcQ" size={350}/>
+        <QRCode value="https://www.youtube.com/watch?v=dQw4w9WgXcQ" size={350} />
       </div>
       <VisualButton
         iconName="Home"
         text="На главную"
         goTo="/"
-        className="mb-10"
+        className="mt-6"
       />
-      <TalkingHead
+      <TalkingHeadComponent
         text={message}
+        mode="base"
+        cameraView="head"
       />
     </div>
   );

@@ -1,4 +1,5 @@
-import { TalkingHead } from "@/components/talking-head";
+import { TalkingHeadComponent } from "@/components/talking-head";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,27 +7,28 @@ export default function Home() {
   const message = 'Казанскую Архитектуру ты никогда не забудешь';
 
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-full flex flex-col pb-44">
       <div className="flex flex-col gap-y-3">
         {places.map((place) => (
           <Link key={place.name} href={`/map?destination=${place.adress}`}>
             <div className="bg-white rounded-lg flex flex-col items-center p-3 shadow-lg">
-              <div className="relative">
+              <AspectRatio ratio={4 / 3}>
                 <Image
-                  alt="Tourism type"
+                  alt="Touristic place"
                   src={place.imgUrl}
-                  height={100}
-                  width={200}
-                  className="rounded-xl w-full"
+                  fill
+                  className="rounded-xl object-cover"
                 />
-              </div>
+              </AspectRatio>
               <p className="font-medium">{place.name}</p>
             </div>
           </Link>
         ))}
       </div>
-      <TalkingHead
+      <TalkingHeadComponent
         text={message}
+        cameraView="head"
+        mode="base"
       />
     </div>
   );
@@ -36,7 +38,7 @@ const places: Place[] = [
   {
     'name': 'Казанский кремль',
     'imgUrl': '/tourism/history/1.jpeg',
-    'adress': 'Казанский кремль',
+    'adress': 'Казанский Кремль',
   },
   {
     'name': 'Музеи',

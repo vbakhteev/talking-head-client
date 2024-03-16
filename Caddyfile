@@ -1,0 +1,47 @@
+(cors) {
+	@cors_preflight method OPTIONS
+	handle @cors_preflight {
+		header {
+			Access-Control-Allow-Methods "GET, POST, PUT, PATCH, DELETE"
+			Access-Control-Max-Age "3600"
+      Access-Control-Allow-Origin "*"
+      Access-Control-Allow-Credentials "true"
+      Access-Control-Allow-Headers "*"
+		}
+		respond "" 204
+	}
+}
+
+:7777 {
+  import cors
+  reverse_proxy https://gigachat.devices.sberbank.ru {
+    transport http {
+			tls_insecure_skip_verify
+		}
+    header_up Host {upstream_hostport}
+  }
+}
+
+:7778 {
+    import cors
+    reverse_proxy https://smartspeech.sber.ru {
+      transport http {
+        tls_insecure_skip_verify
+      }
+      header_up Host {upstream_hostport}
+      header_down Access-Control-Allow-Headers *
+      header_down Access-Control-Expose-Headers *
+    }
+   header Access-Control-Allow-Origin *
+   header Access-Control-Allow-Methods *
+  }
+
+:7779 {
+    import cors
+    reverse_proxy https://ngw.devices.sberbank.ru:9443 {
+      transport http {
+        tls_insecure_skip_verify
+      }
+      header_up Host {upstream_hostport}
+    }
+  }

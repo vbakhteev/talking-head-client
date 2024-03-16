@@ -1,6 +1,6 @@
 "use client";
 
-import { TalkingHead } from "@/components/talking-head";
+import { TalkingHeadComponent } from "@/components/talking-head";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { FoodPlace, TableEntity } from "./_components/table-entity";
@@ -18,13 +18,13 @@ export default function Home() {
     const redirectTimeout = setTimeout(() => {
       router.push(`/map?destination=${adress}`);
     }, 5000);
-  
+
     return () => clearTimeout(redirectTimeout);
   }, [router, adress])
 
   return (
-    <div className="h-full flex flex-col">
-      <div className="grid grid-cols-2 gap-2">
+    <div className="flex flex-col">
+      <div className="grid grid-cols-2 gap-2 placeholder-yellow-300 pb-44 pt-3">
         {foodPlaces.map((foodPlace) => (
           <TableEntity
             key={foodPlace.name}
@@ -32,8 +32,10 @@ export default function Home() {
           />
         ))}
       </div>
-      <TalkingHead
+      <TalkingHeadComponent
         text={message}
+        cameraView="head"
+        mode="base"
       />
     </div>
   );
