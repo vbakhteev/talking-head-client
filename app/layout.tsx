@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { LanguageSelector } from "./_components/language-selector";
+import { Header } from "./_components/header";
 
 const inter = Inter({ subsets: ["cyrillic"] });
 
@@ -18,11 +18,11 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={inter.className}>
-        <main className="bg-gray-200 min-h-screen">
-          <div className="absolute top-3 right-3">
-            <LanguageSelector />
+        <main className="bg-gray-200 h-screen">
+          <Header />
+          <div>
+            {children}
           </div>
-          {children}
         </main>
       </body>
     </html>
