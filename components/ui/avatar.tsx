@@ -3,8 +3,15 @@
 import { useEffect, useRef, useState } from "react";
 import { useAccessKey } from "@/hooks/auth"
 import TalkingHead from "@/lib/talkinghead.mjs"
+import useModelMode from "@/hooks/useModelMode";
 
-export const Avatar = ({ text, cameraView, mode }: { text?: string, cameraView: string, mode: string }) => {
+export const modelModes = [
+  "base",
+  "football",
+];
+
+export const Avatar = ({ text, cameraView }: { text?: string, cameraView: string }) => {
+  const mode = useModelMode(state => state.get)();
   const avatarRef = useRef(null)
   const auth = useAccessKey("salut_key")
   useEffect(() => {

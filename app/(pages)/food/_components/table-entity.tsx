@@ -6,7 +6,7 @@ export const TableEntity = ({ foodPlace }: { foodPlace: FoodPlace } ) => {
     return (
       <Link
         href={`/food?adress=${foodPlace.adress}`}
-        className="bg-white rounded-lg flex flex-col items-left p-3 space-y-1 shadow-md"
+        className="bg-white hover:bg-slate-200 rounded-lg flex flex-col items-left p-3 space-y-1 shadow-md"
       >
         <div className="relative">
           <AspectRatio ratio={16 / 9}>

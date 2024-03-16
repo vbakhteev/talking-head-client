@@ -24,7 +24,10 @@ export const VisualButton = ({
     return (
         <Button
             onClick={() => router.push(goTo)}
-            className={cn("gap-x-2 font-semibold rounded-xl outline outline-1", className)}
+            className={cn(
+                "gap-x-2 font-semibold rounded-xl outline outline-1 hover:bg-slate-200 hover:text-accent-foreground",
+                className
+            )}
             variant="outline"
         >
             {<LucideIcon size={24} />}

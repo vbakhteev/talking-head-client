@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
-  const message = 'Чем интересно заняться?';
+  const message = 'Чем тебе интересно заняться?';
 
   return (
     <div className="h-full flex flex-col">
@@ -13,7 +13,7 @@ export default function Home() {
           <Link
             key={tourismType.name}
             href={tourismType.url}
-            className="bg-white rounded-lg flex flex-col items-center p-3 shadow-md"
+            className="bg-white hover:bg-slate-200 rounded-lg flex flex-col items-center p-3 shadow-md"
           >
             <AspectRatio ratio={4 / 3}>
               <Image
