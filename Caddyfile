@@ -37,11 +37,12 @@
   }
 
 :7779 {
-    import cors
-    reverse_proxy https://ngw.devices.sberbank.ru:9443 {
-      transport http {
-        tls_insecure_skip_verify
-      }
-      header_up Host {upstream_hostport}
+  import cors
+  reverse_proxy https://ngw.devices.sberbank.ru:9443 {
+    transport http {
+      tls_insecure_skip_verify
     }
+    header_up Host {upstream_hostport}
   }
+  header Access-Control-Allow-Origin *
+}

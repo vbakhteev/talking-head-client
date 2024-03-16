@@ -34,7 +34,7 @@ export const useGigaChatAccessKey = (key: string) => {
 
   return () => {
     if (accessKey.deadline <= Date.now()) {
-      fetch(`https://ngw.devices.sberbank.ru:9443/api/v2/oauth`, {
+      fetch(`http://localhost:7779/api/v2/oath`, {
         headers: {
           Authorization: `Basic [SUBSTITUTE]`,
           RqUID: "6f0b1291-c7f3-43c6-bb2e-9f3efb2dc98e",
@@ -42,10 +42,6 @@ export const useGigaChatAccessKey = (key: string) => {
         },
         method: "POST",
         body: "scope=GIGACHAT_API_PERS"
-      })
-      .then((res) => {
-        console.log(res)
-        return res;
       })
       .then(res => res.json())
       .then(data => {
