@@ -4,7 +4,7 @@ const nextConfig = {
   reactStrictMode: false,
   images: {
     domains: [],
-  },
+  }
 };
 
 export default nextConfig;
