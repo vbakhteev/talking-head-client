@@ -1,4 +1,4 @@
-import { TalkingHead } from "@/components/talking-head";
+import { TalkingHeadComponent } from "@/components/talking-head";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -25,8 +25,10 @@ export default function Home() {
           </Link>
         ))}
       </div>
-      <TalkingHead
+      <TalkingHeadComponent
         text={message}
+        cameraView="head"
+        mode="base"
       />
     </div>
   );
