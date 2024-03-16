@@ -1,18 +1,20 @@
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Image from "next/image";
 import Link from "next/link";
 
 export const TableEntity = ({ foodPlace }: { foodPlace: FoodPlace } ) => {
     return (
       <Link href={`/food?adress=${foodPlace.adress}`}>
-        <div className="bg-white rounded-lg flex flex-col items-left p-3 space-y-1">
+        <div className="bg-white rounded-lg flex flex-col items-left p-3 space-y-1 shadow-md">
           <div className="relative">
-            <Image
-              alt="Food place"
-              src={foodPlace.imgUrl}
-              width={200}
-              height={100}
-              className="rounded-xl w-full"
-            />
+            <AspectRatio ratio={16 / 9}>
+              <Image
+                alt="Food place"
+                src={foodPlace.imgUrl}
+                fill
+                className="rounded-xl object-cover"
+              />
+            </AspectRatio>
           </div>
           <p className="text-xl font-medium">{foodPlace.name}</p>
           <p className="text-xs text-gray-500">{foodPlace.restaurantType}</p>
