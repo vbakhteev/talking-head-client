@@ -1,19 +1,17 @@
 "use client";
 
-import { Avatar } from "@/components/ui/avatar";
 import { Menu } from "./_components/menu";
-import useModelMode from "@/hooks/useModelMode";
+import { useGigaChatAccessKey } from "@/hooks/auth";
+import { LandingAvatar } from "./_components/landing-avatar";
 
 export default function Home() {
-  useModelMode(state => state.next)();
+  const auth = useGigaChatAccessKey("gigaChatAccessKey");
+  const authorization = `Bearer ${auth()}`;
+  console.log(authorization);
 
   return (
     <div className="flex flex-col">
-      <div className="w-full" style={{ height: "50rem" }}>
-        <Avatar
-          cameraView="full"
-        />
-      </div>
+      <LandingAvatar />
       <div className="sticky bottom-0">
         <Menu />
       </div>

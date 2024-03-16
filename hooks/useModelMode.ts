@@ -1,5 +1,5 @@
 import { modelModes } from '@/components/ui/avatar';
-import create from 'zustand';
+import { create } from 'zustand';
 
 type ModelMode = {
   i: number;
