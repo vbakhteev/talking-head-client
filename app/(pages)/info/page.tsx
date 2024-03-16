@@ -31,7 +31,6 @@ export default function Home() {
       <div className="w-full" style={{ height: "38rem" }}>
         <Avatar
           cameraView="upper"
-          mode="base"
         />
       </div>
       <div className='group absolute bottom-0 w-full flex flex-col'>

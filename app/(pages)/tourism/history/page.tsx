@@ -11,7 +11,7 @@ export default function Home() {
       <div className="flex flex-col gap-y-3">
         {places.map((place) => (
           <Link key={place.name} href={`/map?destination=${place.adress}`}>
-            <div className="bg-white rounded-lg flex flex-col items-center p-3 shadow-lg">
+            <div className="bg-white hover:bg-slate-200 rounded-lg flex flex-col items-center p-3 shadow-lg">
               <AspectRatio ratio={4 / 3}>
                 <Image
                   alt="Touristic place"
@@ -41,12 +41,12 @@ const places: Place[] = [
     'adress': 'Казанский Кремль',
   },
   {
-    'name': 'Музеи',
+    'name': 'Чаша',
     'imgUrl': '/tourism/history/2.jpeg',
     'adress': 'Казань, ул. Кремлевская, 2',
   },
   {
-    'name': 'Парки Развлечений',
+    'name': 'Канал Булак',
     'imgUrl': '/tourism/history/3.jpeg',
     'adress': 'Казань, ул. Лево-Булачная, 2',
   },
