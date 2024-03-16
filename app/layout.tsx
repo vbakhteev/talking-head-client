@@ -18,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={inter.className}>
-        <main className="bg-gray-200 h-screen">
-          <Header />
-          <div className="flex-1 px-3">
+        <main className="bg-gray-200 min-h-screen">
+          <div className="sticky top-0 z-50">
+            <Header />
+          </div>
+          <div className="px-3">
             {children}
           </div>
         </main>

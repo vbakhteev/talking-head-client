@@ -4,25 +4,26 @@ import Link from "next/link";
 
 export const TableEntity = ({ foodPlace }: { foodPlace: FoodPlace } ) => {
     return (
-      <Link href={`/food?adress=${foodPlace.adress}`}>
-        <div className="bg-white rounded-lg flex flex-col items-left p-3 space-y-1 shadow-md">
-          <div className="relative">
-            <AspectRatio ratio={16 / 9}>
-              <Image
-                alt="Food place"
-                src={foodPlace.imgUrl}
-                fill
-                className="rounded-xl object-cover"
-              />
-            </AspectRatio>
-          </div>
-          <p className="text-xl font-medium">{foodPlace.name}</p>
-          <p className="text-xs text-gray-500">{foodPlace.restaurantType}</p>
-          <p className="text-xs">{foodPlace.adress}</p>
-          <p className="text-xs">
-            Открыто до <span className="font-semibold">{foodPlace.openUtil}</span>
-          </p>
+      <Link
+        href={`/food?adress=${foodPlace.adress}`}
+        className="bg-white rounded-lg flex flex-col items-left p-3 space-y-1 shadow-md"
+      >
+        <div className="relative">
+          <AspectRatio ratio={16 / 9}>
+            <Image
+              alt="Food place"
+              src={foodPlace.imgUrl}
+              fill
+              className="rounded-xl object-cover"
+            />
+          </AspectRatio>
         </div>
+        <p className="text-xl font-medium">{foodPlace.name}</p>
+        <p className="text-xs text-gray-500">{foodPlace.restaurantType}</p>
+        <p className="text-xs">{foodPlace.adress}</p>
+        <p className="text-xs">
+          Открыто до <span className="font-semibold">{foodPlace.openUtil}</span>
+        </p>
       </Link>
     )
 }

@@ -5,7 +5,7 @@ import { VisualButton } from "@/components/visual-button";
 export const Menu = () => {
     return (
         <div className="bg-transparent w-full py-4 px-3 flex flex-col gap-y-2">
-            <div className="w-full flex items-center justify-between">
+            <div className="w-full flex items-center justify-center gap-x-4">
                 <VisualButton
                     iconName="Soup"
                     text="Как добраться"

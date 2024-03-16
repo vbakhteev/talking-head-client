@@ -28,9 +28,9 @@ export default function Home() {
 
   return (
     <div className=''>
-      <div className="w-full" style={{ height: "90rem" }}>
+      <div className="w-full" style={{ height: "38rem" }}>
         <Avatar
-          cameraView="full"
+          cameraView="upper"
           mode="base"
         />
       </div>

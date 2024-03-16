@@ -23,8 +23,8 @@ export default function Home() {
   }, [router, adress])
 
   return (
-    <div className="h-full flex flex-col">
-      <div className="grid grid-cols-2 gap-2">
+    <div className="flex flex-col">
+      <div className="grid grid-cols-2 gap-2 placeholder-yellow-300 pb-44 pt-3">
         {foodPlaces.map((foodPlace) => (
           <TableEntity
             key={foodPlace.name}

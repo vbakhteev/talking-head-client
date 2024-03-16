@@ -12,7 +12,7 @@ export default function Home() {
 
   const message = `Отсканируй QR код, чтобы сохранить маршрут до ${destination}`
   return (
-    <div className="h-full flex flex-col justify-end items-center gap-y-4 pb-5">
+    <div className="h-full flex flex-col justify-end items-center gap-y-4 pb-5 pt-9">
       <div className="p-5 bg-white">
         <QRCode value="https://www.youtube.com/watch?v=dQw4w9WgXcQ" size={350} />
       </div>
@@ -20,7 +20,7 @@ export default function Home() {
         iconName="Home"
         text="На главную"
         goTo="/"
-        className="mb-10"
+        className="mt-6"
       />
       <TalkingHeadComponent
         text={message}
