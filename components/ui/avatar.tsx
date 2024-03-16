@@ -26,7 +26,9 @@ export const Avatar = ({ text, cameraView, mode }: { text?: string, cameraView: 
     }).catch((error) => {
       console.log(error);
     });
-  });
+
+    return () => { head.deleteCanvas() };
+  }, []);
 
   return (
     <>

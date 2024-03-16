@@ -6,7 +6,7 @@ import { LanguageSelector } from "./_components/language-selector";
 const inter = Inter({ subsets: ["cyrillic"] });
 
 export const metadata: Metadata = {
-  title: "Марат",
+  title: "Ирек",
   description: "",
 };
 
