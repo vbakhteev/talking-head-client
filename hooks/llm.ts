@@ -2,12 +2,24 @@ import { useQueryClient } from '@tanstack/react-query'
 import { useQuery } from '@tanstack/react-query'
 import { useGigaChatAccessKey } from "./auth";
 
-export type Replica = {
+type Replica = {
     role: "system" | "user";
     content: string;
 }
 
-export const useLlm = (messages: Replica[]) => {
+
+export const useLlm = (instruction: string, input: string) => {
+    const messages: Replica[] = [
+        {
+            "role": "system",
+            "content": instruction
+        },
+        {
+            "role": "user",
+            "content": input
+        }
+    ]
+
     const accessToken = useGigaChatAccessKey("gigaChatAccessKey")();
     const queryClient = useQueryClient();
 
