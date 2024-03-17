@@ -25,7 +25,8 @@ export const useLlm = (instruction: string, input: string) => {
 
     const { data, status } = useQuery({
             queryKey: ['llm-api', instruction, input],
-            queryFn: () => requestLlm(messages, accessToken)
+            queryFn: () => requestLlm(messages, accessToken),
+            retry: 3
         },
         queryClient,
     );

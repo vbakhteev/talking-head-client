@@ -8,9 +8,9 @@ import { useEffect, useRef } from "react";
 export const modelModes = [
   "base",
   "football",
-  "museum",
-  "scientist",
   "summer",
+  "scientist",
+  "museum",
   "winter"
 ];
 

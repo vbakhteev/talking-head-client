@@ -41,10 +41,10 @@ export default function Home() {
 
   return (
     <div className="">
-      <div className="h-80 flex">
+      <div className="h-65 flex">
         <YMap coordinates={coordinates} />
       </div>
-      <div className="flex justify-around">
+      <div className="flex justify-around pt-3">
         <VisualButton
           iconName="Download"
           text="Сохранить маршрут"
