@@ -12,9 +12,12 @@ export default function Home() {
   const destination = searchParams.get('destination');
   const goTo = `/qr?destination=${destination}`;
 
-  const [coordinates, setCoordinates] = useState({ lng: 37.623082, lat: 55.75254 })
+  const [coordinates, setCoordinates] = useState({ lng: 49.121501, lat: 55.787462 })
 
   useEffect(() => {
+    if (destination === null) {
+      return
+    }
     fetch(`https://geocode-maps.yandex.ru/1.x/?apikey=${process.env.NEXT_PUBLIC_YMAP_API_KEY}&geocode=Казань, ${destination}&format=json`).then(res => res.json().then(
       (data) => {
         data.response.GeoObjectCollection.featureMember.forEach(element => {
@@ -33,7 +36,8 @@ export default function Home() {
   }, [])
 
 
-  const message = `Вот где находится: ${destination}`
+
+  const message = destination === null ? "Держите карту Казани" : `Вот где находится: ${destination}`
 
   return (
     <div className="">

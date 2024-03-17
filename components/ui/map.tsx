@@ -22,7 +22,7 @@ interface MapProps {
 const Map: FC<MapProps> = ({ coordinates }) => {
   if (!coordinates) return null;
 
-  const location = { center: [coordinates.lng, coordinates.lat], zoom: 13 };
+  const location = { center: [coordinates.lng, coordinates.lat], zoom: 15 };
 
   return (
     <YMap location={location} className="min-h-[calc(100vh-300px)] md:min-h-[calc(100vh-280px)]">
