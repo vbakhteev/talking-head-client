@@ -34,24 +34,24 @@ export const useGigaChatAccessKey = (key: string) => {
 
   return () => {
     if (accessKey.deadline <= Date.now()) {
-      fetch(`http://localhost:7779/api/v2/oath`, {
+      fetch(`${process.env.NEXT_PUBLIC_AUTH_ENDPOINT}/api/v2/oauth`, {
         headers: {
-          Authorization: `Basic [SUBSTITUTE]`,
+          Authorization: `Basic ${process.env.NEXT_PUBLIC_GIGA_KEY}`,
           RqUID: "6f0b1291-c7f3-43c6-bb2e-9f3efb2dc98e",
           "Content-Type": "application/x-www-form-urlencoded"
         },
         method: "POST",
-        body: "scope=GIGACHAT_API_PERS"
+        body: encodeURI("scope=GIGACHAT_API_PERS")
       })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-        setAccessKey({
-          accessKey: data.access_token,
-          deadline: data.expires_at
-        })
-        return accessKey
-      }).catch(console.error).catch(console.error)
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+          setAccessKey({
+            accessKey: data.access_token,
+            deadline: data.expires_at
+          })
+          return accessKey
+        }).catch(console.error).catch(console.error)
 
     } else {
       return accessKey.accessKey;

@@ -44,5 +44,4 @@
     }
     header_up Host {upstream_hostport}
   }
-  header Access-Control-Allow-Origin *
-}
+
