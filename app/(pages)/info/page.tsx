@@ -10,6 +10,8 @@ import { Avatar } from '@/components/ui/avatar';
 
 export default function Home() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const reply = searchParams.get('reply')
 
   const [value, setValue] = useState('')
 

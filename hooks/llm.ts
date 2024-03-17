@@ -24,11 +24,11 @@ export const useLlm = (instruction: string, input: string) => {
     const queryClient = useQueryClient();
 
     const { data, status } = useQuery({
-            queryKey: ['llm-api'],
+            queryKey: ['llm-api', instruction, input],
             queryFn: () => requestLlm(messages, accessToken)
         },
         queryClient,
-    )
+    );
     return [data, status];
 }
 
