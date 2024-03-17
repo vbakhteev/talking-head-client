@@ -7,7 +7,7 @@ export const Menu = () => {
         <div className="bg-transparent w-full py-4 px-3 flex flex-col gap-y-2">
             <div className="w-full flex items-center justify-center gap-x-4">
                 <VisualButton
-                    iconName="Soup"
+                    iconName="Map"
                     text="Как добраться"
                     goTo="/map"
                 />
