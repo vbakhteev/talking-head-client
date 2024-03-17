@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "./_components/header";
 import { App } from './App';
+import dynamic from 'next/dynamic';
+
+const YMapLoader = dynamic(() => import('./_components/maploader'), { ssr: false });
 
 const inter = Inter({ subsets: ["cyrillic"] });
 
@@ -26,6 +29,7 @@ export default function RootLayout({
             </div>
             <div className="px-3">
               {children}
+              <YMapLoader />
             </div>
           </main>
         </App>
