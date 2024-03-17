@@ -8,9 +8,11 @@ import { FoodPlace, TableEntity } from "./_components/table-entity";
 export default function Home() {
   const router = useRouter();
   const params = useSearchParams();
+
+  const preference = params.get('preference') || 'Татарская кухня';
   const adress = params.get('adress');
 
-  const message = adress ? 'Люди советуют здесь попробовать губадию с чак-чаком' : 'Вот несколько татарских рестаранов, которые я рекоммендую';
+  const message = adress ? 'Люди советуют здесь попробовать губадию и чак-чак' : 'Вот несколько татарских рестаранов, которые я рекоммендую';
   useEffect(() => {
     if (!adress) return;
 

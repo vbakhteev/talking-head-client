@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useAccessKey } from "@/hooks/auth"
+import { useSaluteAccessKey } from "@/hooks/auth"
 import TalkingHead from "@/lib/talkinghead.mjs"
 import useModelMode from "@/hooks/useModelMode";
 
@@ -13,7 +13,7 @@ export const modelModes = [
 export const Avatar = ({ text, cameraView }: { text?: string, cameraView: string }) => {
   const mode = useModelMode(state => state.get)();
   const avatarRef = useRef(null)
-  const auth = useAccessKey("salut_key")
+  const auth = useSaluteAccessKey("salut_key")  
   useEffect(() => {
     const head = new TalkingHead(avatarRef.current!, {
       ttsEndpoint: `${process.env.NEXT_PUBLIC_SALUT_API_ENDPOINT}/rest/v1/text:synthesize`,

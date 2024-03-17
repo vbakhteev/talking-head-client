@@ -10,20 +10,14 @@ import { Avatar } from '@/components/ui/avatar';
 
 export default function Home() {
   const router = useRouter();
-
   const searchParams = useSearchParams();
-  const question = searchParams.get('question');
-  if (question) {
-    // TODO: add logic to handle question with LLM and redirect to the appropriate page
-    const destination = 'Отель Imereti, Казань'
-    router.push(`/map?destination=${destination}`)
-  }
+  const reply = searchParams.get('reply')
 
   const [value, setValue] = useState('')
 
   const onSubmit = () => {
     const params = new URLSearchParams({ 'question': value });
-    router.push(`/info?${params.toString()}`);
+    router.push(`/info/q?${params.toString()}`);
   }
 
   return (
@@ -46,7 +40,6 @@ export default function Home() {
           <Input
             value={value}
             onChange={(e) => setValue(e.target.value)}
-          // className='group-focus'
           />
           <Button
             variant="secondary"
