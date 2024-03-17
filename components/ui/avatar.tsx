@@ -1,13 +1,17 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useSaluteAccessKey } from "@/hooks/auth"
-import TalkingHead from "@/lib/talkinghead.mjs"
+import { useSaluteAccessKey } from "@/hooks/auth";
 import useModelMode from "@/hooks/useModelMode";
+import TalkingHead from "@/lib/talkinghead.mjs";
+import { useEffect, useRef } from "react";
 
 export const modelModes = [
   "base",
   "football",
+  "museum",
+  "scientist",
+  "summer",
+  "winter"
 ];
 
 export const Avatar = ({ text, cameraView }: { text?: string, cameraView: string }) => {

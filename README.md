@@ -24,3 +24,7 @@ npm run dev
 ```
 
 Приложение будт доступно тут: [http://localhost:3000](http://localhost:3000).
+
+
+Roadmap
+![roadmap](public/readme/roadmap2.png "Roadmap")
